@@ -11,7 +11,9 @@ W przypadku interfejsu, wszystkie metody są domyślnie publiczne (choć od nows
 
 Podsumowując interfejs używany jest do dodawania konkretnych zachowań w klasach, podczas gdy klasa abstrakcyjna używana jest raczej do tworzenia określonej hierarchii, w której współdzielimy część kodu.
 1.B. Czym różni się tablica od listy liniowej?
-
+Tablica jest to struktura danych przechowywana w pamięci komputera jako całkowity blok danych. Zerowy indeks tablicy wskazuje na adres komórki pamięci w której to rozpoczyna się nasz blok danych. W związku z tą cechą niezwykle wydajną i szybką operacją jest odczyt z tablicy, gdyż wystarczy podać jej indeks (komórkę pamięci przesuniętą ileś razy o rozmiar typu danej), aby odnaleźć daną wartość, bez przeszukiwania tablicy.
+Niestety w związku z taką budową tej struktury, operacje dodawania oraz usuwania elementów wiążą się z reorganizacją poszczególnych elementów, wymuszając nijako iteracyjne przechodzenie po jej elementach.
+Lista również jest strukturą danych. Jej każdy element przechowuje w pamięci swoją wartość oraz wskażnik na adres następnego elementu. Z tego wynika bardzo wydajna możliwośc dodawania i usuwania elementów poprzez przekierowanie wskaźników, jednak odczyt danych z listy wiąże się z iteracyjnym przejściem po jej elementach.
 
 2.
 Mając tablicę int[] numbers, wypełnioną liczbami całkowitymi i posortowaną malejąco ( numbers[i] > numbers[i+1] ), sprawdź czy występuje w niej liczba int x. Metoda powinna zwracać wartość TRUE, jeśli dana liczba występuje oraz FALSE w przeciwnym wypadku. W rozwiązaniu zależy nam na jak najmniejszej złożoności obliczeniowej (priorytet) oraz pamięciowej. Podaj szacowaną złożoność obliczeniową oraz pamięciową. Poniżej sygnatura metody do napisania.
