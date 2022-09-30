@@ -1,5 +1,6 @@
 public class Program {
-    public static void main(String[] args) {
-        System.out.println();
+    public static void main(String[] args){
+        var app = new Application();
+        app.run();
     }
 }
