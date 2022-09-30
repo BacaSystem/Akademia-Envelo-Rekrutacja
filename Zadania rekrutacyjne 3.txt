@@ -3,6 +3,13 @@ Rozwiązania zadań proszę zacommitować na repozytorium GIT.
 
 1.
 1.A. W jakim celu używa się klas abstrakcyjnych, a w jakim interfejsów?
+Oba typy są używane w podobnych celach - służą jako wzorzecz do konstruowania obiektów, jednak jest kilka rzeczy które odróżnia interfejs od klasy abstrakcyjnej.
+Po pierwsze interfejs nie może posiadać pól w odróżnieniu do klasy abstrakcyjnej, której pola klasy mogą definiować dane z jakich składać się będzie każdy obiekt. Interfes może zawierać jedynie stałe pola oraz deklaracje metod.
+Z obu typów nie da się utworzyć obiektu (bezpośrednio), a ponadto w przypadku języka Javy, gdzie nie występuję wielodziedziczenie, wykorzystanie kilku klas abstrakcyjnych wiąże się z mało czytelną hierarchią dziedziczenia, w odróżnieniu do interfesjów, których można implementować wiele w jednym obiekcie.
+W klasie abstrakcyjnej nie wszystkie metody muszą być abstrakcyjne, oznacza to że wybrane metody w takiej klasie mogą posiadać deklaracje - ciało funkcji. Dodatkowo klasa abstrakcyjna jak każda klasa może zawierać konstruktor, wywoływany podczas tworzenia obiektu dziedziczącego po niej.  
+W przypadku interfejsu, wszystkie metody są domyślnie publiczne (choć od nowszych wersji dopuszczalne są metody prywatne i statyczne), podczas gdy w klasach abstrakcyjnych pola i metody mogą mieć zwyczajne zasady restrykcji danych.
+
+Podsumowując interfejs używany jest do dodawania konkretnych zachowań w klasach, podczas gdy klasa abstrakcyjna używana jest raczej do tworzenia określonej hierarchii, w której współdzielimy część kodu.
 1.B. Czym różni się tablica od listy liniowej?
 
 
