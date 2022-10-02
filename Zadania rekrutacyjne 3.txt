@@ -18,23 +18,23 @@ Lista również jest strukturą danych. Jej każdy element przechowuje w pamięc
 2.
 Mając tablicę int[] numbers, wypełnioną liczbami całkowitymi i posortowaną malejąco ( numbers[i] > numbers[i+1] ), sprawdź czy występuje w niej liczba int x. Metoda powinna zwracać wartość TRUE, jeśli dana liczba występuje oraz FALSE w przeciwnym wypadku. W rozwiązaniu zależy nam na jak najmniejszej złożoności obliczeniowej (priorytet) oraz pamięciowej. Podaj szacowaną złożoność obliczeniową oraz pamięciową. Poniżej sygnatura metody do napisania.
 
-private boolean search(int[] numbers, int x){
+private boolean search(int[] numbers, int x) {
     int leftIndex = 0;
-        int rightIndex = numbers.length - 1;
+    int rightIndex = numbers.length - 1;
+    
+    while (leftIndex <= rightIndex) {
+        int index = leftIndex + (rightIndex - leftIndex) / 2;
 
-        while (leftIndex <= rightIndex){
-            int index = leftIndex + (rightIndex - leftIndex) / 2;
-
-            if(x > numbers[index]){
-                rightIndex = index - 1;
-            } else if (x < numbers[index]) {
-               leftIndex = index + 1;
-            }
-            else {
-                return true;
-            }
+        if(x > numbers[index]) {
+            rightIndex = index - 1;
+        } else if (x < numbers[index]) {
+            leftIndex = index + 1;
         }
-        return false;
+        else {
+            return true;
+        }
+    }
+    return false;
 }
 
 Jest to algorytm przerszukiwania binarnego o złożoności obliczeniowej O(log n) oraz stałej złożoności pamięcowej O(1).
@@ -42,3 +42,5 @@ Jest to algorytm przerszukiwania binarnego o złożoności obliczeniowej O(log n
 3.
 Napisz program, który wykorzysta API Kanye Rest https://kanye.rest/ by każdorazowo zaproponować nową perełkę mądrości od Kanye Westa. Program powinien być obsługiwany z poziomu konsoli i obsługiwać komendę "next" by wywołać następny cytat. Program nie potrzebuje oprawy graficznej. Zwróć uwagę na poprawną architekturę aplikacji oraz na czystość kodu.
 Dla chętnych, za dodatkowe punkty: dodaj zapisywanie cytatów w pamięci, by upewnić się, że każdy kolejny cytat jest nowy. 
+
+Rozwiązanie zadania 3. znajduje się w osobnym folderze "src" w postaci plików źródłowych gotowych do kompilacji. Punkt startowy aplikacji znajduje się w pliku "Program.java". 
